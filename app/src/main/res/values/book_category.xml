@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="categoriesArray">
+
+        <item>choose book category</item>
+
+        <item>Drama</item>
+
+        <item>Love</item>
+
+        <item>Other</item>
+
+    </array>
+</resources>

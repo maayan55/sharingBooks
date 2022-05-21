@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "51384239008",
+    "project_id": "sharingbooks-90a20",
+    "storage_bucket": "sharingbooks-90a20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51384239008:android:aab3f84048a57b83b6dac5",
+        "android_client_info": {
+          "package_name": "com.example.sharingbooks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "51384239008-nts0905ujg0b36trb7rdsmi4i9rq0k3e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDp3sHnZhANIOgxJ6Cir6SH_bxfuwwUrKY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51384239008-nts0905ujg0b36trb7rdsmi4i9rq0k3e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

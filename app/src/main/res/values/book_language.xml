@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="languagesArray">
+
+        <item>choose book language</item>
+
+        <item>Hebrew</item>
+
+        <item>English</item>
+
+        <item>Other</item>
+
+    </array>
+</resources>

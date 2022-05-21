@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    tools:context="Activities.ClientProfile">
+
+
+    <TextView
+        android:id="@+id/SignUp"
+        android:layout_width="233dp"
+        android:layout_height="77dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="103dp"
+        android:layout_marginBottom="470dp"
+        android:gravity="center"
+        android:text="My profile"
+        android:fontFamily="@font/architects_daughter"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.094" />
+
+
+    <EditText
+        android:id="@+id/nameClient"
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="268dp"
+        android:layout_marginBottom="386dp"
+        android:textColor="@color/cardview_dark_background"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        tools:ignore="TextFields" />
+
+    <EditText
+        android:id="@+id/phoneClient"
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="375dp"
+        android:layout_marginBottom="277dp"
+        android:textColor="@color/cardview_dark_background"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Phone"
+        tools:ignore="TextFields" />
+
+    <Button
+        android:id="@+id/updateClient"
+        android:layout_width="140dp"
+        android:layout_height="42dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="122dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="189dp"
+        android:background="#000"
+        android:gravity="center"
+        android:text="Update details"
+        android:textAllCaps="false"
+        android:textColor="#fff" />
+</RelativeLayout>

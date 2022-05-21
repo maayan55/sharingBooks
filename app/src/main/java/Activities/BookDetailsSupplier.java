@@ -1,0 +1,221 @@
+package Activities;
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Build;
+import android.os.Bundle;
+
+import com.example.sharingbooks.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.time.Duration;
+import java.time.LocalDate;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import Adapters.Book;
+import Adapters.OrderBook;
+import Adapters.Supplier;
+
+public class BookDetailsSupplier extends AppCompatActivity implements View.OnClickListener{
+    private TextView book_name, book_description,book_author,book_publishing_year,book_language,book_location, book_burrow_days, book_available;
+    String name;
+    String available;
+    String orderId;
+    private Button returnBook;
+    private ImageView img;
+    private DatabaseReference suppRef, mainRef,orderRef,bookRef;
+    private FirebaseAuth firebaseAuth;
+    private StorageReference storageRef;
+    private String suppId;
+    private Book book;
+
+    //ask category
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_book_details_supplier);
+        //set text
+        book_name = (TextView) findViewById(R.id.book_name_text);
+        book_available = (TextView) findViewById(R.id.available_book);
+        book_description = (TextView) findViewById(R.id.description_book);
+        book_author = (TextView) findViewById(R.id.author_book);
+        book_publishing_year= (TextView) findViewById(R.id.publishing_year_book);
+        book_language = (TextView) findViewById(R.id.language_book);
+        book_location= (TextView) findViewById(R.id.location_book);
+        book_burrow_days = (TextView) findViewById(R.id.burrow_days_book);
+        //set img
+        img = (ImageView) findViewById(R.id.book_image);
+        //set button
+        returnBook = (Button) findViewById(R.id.book_return);
+        returnBook.setOnClickListener((View.OnClickListener) this);
+        //set id
+        Bundle book_bundle=getIntent().getExtras();
+        String book_name1= (String) book_bundle.get("book");
+        mainRef = FirebaseDatabase.getInstance().getReference();
+        suppId = FirebaseAuth.getInstance().getUid();
+        mainRef.child("Suppliers").child(suppId).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Book new_book=snapshot.child("Books").child(book_name1).getValue(Book.class);
+                suppRef = FirebaseDatabase.getInstance().getReference("Suppliers").child(suppId).child("Books").child(new_book.getName());
+                book_name.setText(new_book.getName());
+                book_description.setText(new_book.getDescription());
+                book_burrow_days.setText(new_book.getBurrowTime());
+                book_available.setText(new_book.getAvailable());
+                book_author.setText(new_book.getAuthor());
+                book_publishing_year.setText(new_book.getPublishingYear());
+                book_language.setText(new_book.getLanguage());
+                book_location.setText(new_book.getLocation());
+                getImg();
+            }
+
+            private void getImg(){
+                String newPath = suppId + "/" + book_name.getText();
+                storageRef = FirebaseStorage.getInstance().getReference("Images");
+
+                final long ONE_MEGABYTE = (long) Math.pow(1024, 10);
+                storageRef.child(newPath).getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+                    @Override
+                    public void onSuccess(byte[] bytes) {
+                        Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                        img.setImageBitmap(bitmap);
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception exception) { }
+                });
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        //set firebase
+        firebaseAuth= FirebaseAuth.getInstance();
+        mainRef = FirebaseDatabase.getInstance().getReference();
+    }
+
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private void returnFunc(){
+        LocalDate current_date = LocalDate.now();
+        orderRef=mainRef.child("Suppliers").child(FirebaseAuth.getInstance().getUid()).child("orders");
+        orderRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot snap:snapshot.getChildren()) {
+                    HashMap<String, String> od = (HashMap<String, String>) snap.getValue();
+                    name = od.get("bookName");
+                    orderId = orderRef.push().getKey();
+                    bookRef = mainRef.child("Suppliers").child(FirebaseAuth.getInstance().getUid()).child("books").child(name);
+                    String returnDate = od.get("returnDate");
+                    if (name.equals(book_name.getText().toString())) {
+                        LocalDate localDate = LocalDate.parse(returnDate);
+                        long num_days = Duration.between(current_date.atStartOfDay(), localDate.atStartOfDay()).toDays();
+                        if (num_days < 0) {
+                            Toast.makeText(BookDetailsSupplier.this, "The book was returned " +
+                                    Integer.parseInt(String.valueOf(num_days)) + " days after the requested return date", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(BookDetailsSupplier.this, "The book was returned on time!", Toast.LENGTH_SHORT).show();
+                        }
+                        snap.getRef().removeValue(); //remove the order from firebase
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    @Override
+    public void onClick(View v) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(BookDetailsSupplier.this);
+        builder.setMessage("did you return the deposit to the client?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        if (v.getId() == R.id.book_return) {
+                            returnFunc();
+                            suppRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    Book book=snapshot.getValue(Book.class);
+                                    book.setAvailable("yes");
+                                    suppRef.setValue(book);
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                }
+                            });
+                        }
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
+    //menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.Logout){
+            firebaseAuth.signOut();
+            finish();
+            startActivity(new Intent(this,loginActivity.class));
+        }
+        if(item.getItemId() == R.id.MyProfile){
+            Intent intent = new Intent(this, ClientProfile.class);
+            startActivity(intent);
+        }
+        if(item.getItemId() == R.id.Home){
+            Intent intent = new Intent(this, MainClient.class);
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+}

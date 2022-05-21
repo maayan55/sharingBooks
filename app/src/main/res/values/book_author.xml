@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="authorsArray">
+
+        <item>choose book author</item>
+
+        <item>J. K. Rowling</item>
+
+        <item>Dr. Seuss</item>
+
+        <item>Carter Brown</item>
+
+        <item>Roald Dahl</item>
+
+        <item>Jackie Collins</item>
+
+        <item>Other</item>
+
+    </array>
+</resources>
