@@ -60,7 +60,7 @@ public class ClientRegister extends AppCompatActivity {
                                         Client user = new Client(name, email, phone,client_id);
                                         myRef.child("Clients").child(client_id).child("details").setValue(user);
                                         Toast.makeText(ClientRegister.this, "Registration successful", Toast.LENGTH_SHORT).show();
-                                        //startActivity(new Intent(ClientRegister.this, MainClient.class));
+                                        startActivity(new Intent(ClientRegister.this, MainClient.class));
                                     }
                                     else{
                                         Toast.makeText(ClientRegister.this, "Registration failed", Toast.LENGTH_SHORT).show();
