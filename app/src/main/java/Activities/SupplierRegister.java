@@ -58,7 +58,7 @@ public class SupplierRegister extends AppCompatActivity{
                                 String userId =task.getResult().getUser().getUid();
                                 Supplier user = new Supplier(name, email, phone, userId, book_list);
                                 myRef.child("Suppliers").child(firebaseAuth.getUid()).child("details").setValue(user);
-//                        myRef.child("Suppliers").child(Objects.requireNonNull(firebaseAuth.getUid())).child("details").child("book_list");
+                                myRef.child("Suppliers").child(Objects.requireNonNull(firebaseAuth.getUid())).child("details").child("book_list");
                                 Toast.makeText(SupplierRegister.this, "Registration successful", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(SupplierRegister.this, MainSupplier.class));
                                 finish();

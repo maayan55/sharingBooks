@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="publishingYearsArray">
+
+        <item>choose book publishing year</item>
+
+        <item>"1999"</item>
+
+        <item>"2000"</item>
+
+        <item>other</item>
+
+    </array>
+</resources>
