@@ -14,39 +14,40 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:paddingLeft="80px"
+        android:paddingLeft="50px"
         android:text="Book name"
         android:textSize="45sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintHorizontal_bias="0.098"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/book_image"
-        android:layout_width="98dp"
-        android:layout_height="88dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.955"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/book_name_text"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/description_text"
-        android:layout_width="262dp"
-        android:layout_height="29dp"
+        android:layout_width="256dp"
+        android:layout_height="34dp"
         android:gravity="center"
         android:text="Description:"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/book_image"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.015" />
 
     <TextView
         android:id="@+id/description_book"
@@ -61,14 +62,69 @@
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/description_text"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
+        android:id="@+id/category_text"
+        android:layout_width="256dp"
+        android:layout_height="34dp"
+        android:gravity="center"
+        android:text="book category"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description_book"
+        app:layout_constraintVertical_bias="0.0" />
+    <TextView
+        android:id="@+id/category_book"
+        android:layout_width="256dp"
+        android:layout_height="34dp"
+        android:gravity="center"
+        android:text="book category"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category_text"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/publishing_year_text"
+        android:layout_width="256dp"
+        android:layout_height="34dp"
+        android:gravity="center"
+        android:text="book category"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category_book"
+        app:layout_constraintVertical_bias="0.0" />
+    <TextView
+        android:id="@+id/publishing_year_book"
+        android:layout_width="256dp"
+        android:layout_height="34dp"
+        android:gravity="center"
+        android:text="book category"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/publishing_year_text"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
         android:id="@+id/available_text"
-        android:layout_width="257dp"
-        android:layout_height="25dp"
+        android:layout_width="256dp"
+        android:layout_height="34dp"
         android:gravity="center"
         android:text="Available:"
         android:textSize="15sp"
@@ -76,75 +132,75 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description_book"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.377" />
 
     <TextView
         android:id="@+id/available_book"
-        android:layout_width="255dp"
-        android:layout_height="26dp"
+        android:layout_width="256dp"
+        android:layout_height="34dp"
         android:background="#FFFFFF"
         android:ems="10"
         android:gravity="center"
         android:inputType="text"
         android:text="Available"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/available_text"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/author_text"
-        android:layout_width="262dp"
-        android:layout_height="27dp"
-        android:gravity="center"
-        android:text="Author:"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.426" />
+
+    <TextView
+        android:id="@+id/author_text"
+        android:layout_width="256dp"
+        android:layout_height="34dp"
+        android:gravity="center"
+        android:text="Author"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/available_book"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/author_book"
-        android:layout_width="249dp"
-        android:layout_height="32dp"
+        android:layout_width="256dp"
+        android:layout_height="34dp"
         android:background="#FFFFFF"
         android:ems="10"
         android:gravity="center"
-        android:inputType= "text"
+        android:inputType="text"
         android:text="Author"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/author_text"
         app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
+        <TextView
         android:id="@+id/language_text"
-        android:layout_width="260dp"
-        android:layout_height="31dp"
+        android:layout_width="256dp"
+        android:layout_height="34dp"
         android:gravity="center"
         android:text="Language:"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/author_book"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/language_book"
-        android:layout_width="254dp"
-        android:layout_height="33dp"
+        android:layout_width="256dp"
+        android:layout_height="34dp"
         android:background="#FFFFFF"
         android:ems="10"
         android:gravity="center"
@@ -153,29 +209,29 @@
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/language_text"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/location_text"
-        android:layout_width="260dp"
-        android:layout_height="31dp"
+        android:layout_width="256dp"
+        android:layout_height="34dp"
         android:gravity="center"
         android:text="Location:"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/language_book"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/location_book"
-        android:layout_width="255dp"
-        android:layout_height="35dp"
+        android:layout_width="256dp"
+        android:layout_height="34dp"
         android:background="#FFFFFF"
         android:ems="10"
         android:gravity="center"
@@ -184,7 +240,7 @@
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/location_text"
         app:layout_constraintVertical_bias="0.0" />
@@ -193,29 +249,28 @@
     <TextView
         android:id="@+id/burrow_days_text"
         android:layout_width="256dp"
-        android:layout_height="29dp"
+        android:layout_height="34dp"
         android:gravity="center"
-        android:text="Burrow days:"
+        android:text="Burrow days"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.663"
-        tools:ignore="UnknownId" />
+        app:layout_constraintTop_toBottomOf="@+id/location_book"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/burrow_days_book"
-        android:layout_width="260dp"
-        android:layout_height="27dp"
+        android:layout_width="256dp"
+        android:layout_height="34dp"
         android:background="#FFFFFF"
         android:gravity="center"
         android:text="Burrow days"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/burrow_days_text"
         app:layout_constraintVertical_bias="0.0" />
@@ -223,78 +278,62 @@
 
     <TextView
         android:id="@+id/security_deposit_text"
-        android:layout_width="255dp"
-        android:layout_height="28dp"
+        android:layout_width="256dp"
+        android:layout_height="34dp"
         android:gravity="center"
         android:text="Security deposit for book:"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.743"
-        tools:ignore="UnknownId" />
+        app:layout_constraintTop_toBottomOf="@+id/burrow_days_book"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/security_deposit_book"
-        android:layout_width="258dp"
-        android:layout_height="32dp"
-        android:background="#FFFFFF"
+        android:layout_width="256dp"
+        android:layout_height="34dp"
         android:gravity="center"
         android:text="Security deposit for book:"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/burrow_days_text"
-        app:layout_constraintVertical_bias="0.276" />
-<!-- ////////////////////////////////////////////////////////////////////////לסדרררררררררררררררררררררררררררררררר///-->
-    <TextView
-        android:id="@+id/category_text"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#FFFFFF"
-        android:gravity="center"
-        android:text="book category:" />
+        app:layout_constraintTop_toBottomOf="@+id/security_deposit_text"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/category_book"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#FFFFFF"
-        android:gravity="center"
-        android:text="book category:" />
 
     <Button
         android:id="@+id/burrow_book"
-        android:layout_width="139dp"
-        android:layout_height="53dp"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
         android:text="Reserve"
         android:textColor="@color/cardview_dark_background"
-        android:textSize="18sp"
+        android:textSize="13sp"
         app:backgroundTint="?android:attr/textColorSecondaryInverse"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.907"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
 
     <Button
         android:id="@+id/supplier_info"
-        android:layout_width="147dp"
-        android:layout_height="51dp"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
         android:text="Supplier Info"
         android:textColor="@color/cardview_dark_background"
-        android:textSize="14sp"
+        android:textSize="13sp"
         app:backgroundTint="?android:attr/textColorSecondaryInverse"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.03"
+        app:layout_constraintHorizontal_bias="0.118"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.158" />
+        app:layout_constraintVertical_bias="0.976" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

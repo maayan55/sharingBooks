@@ -119,7 +119,6 @@ public class BookDetailsClient extends AppCompatActivity implements View.OnClick
                     book_language.setText( book.getLanguage());
                     book_location.setText( book.getLocation());
                     book_securityDeposit.setText( book.getSecurity_deposit());
-                   // book_size.setText(( book.getSize()));
                     getImg();
                 }
             }
@@ -160,12 +159,6 @@ public class BookDetailsClient extends AppCompatActivity implements View.OnClick
                 public void onDataChange(DataSnapshot snapshot) {
                     if (snapshot.exists()) {
                         ArrayList<Book> update_list = new ArrayList<>();
-//                        for (DataSnapshot book3 : snapshot.child("details").child("book list").getChildren()) {
-//                            if (!book.getValue(Book.class).getName().equals(update_book.getName())) {
-//                                update_list.add(book3.getValue(Book.class));
-//                            }
-//                        }
-//                        suppRef.child("details").child("book list").setValue(update_list);
                         String client_id=FirebaseAuth.getInstance().getUid();
                         String supplier_id=suppId;
                         String burrow_date=current_date.toString();

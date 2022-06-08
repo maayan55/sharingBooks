@@ -88,7 +88,7 @@ public class AddBook extends AppCompatActivity implements View.OnClickListener {
 
         bookPublishingYear  = (Spinner) findViewById(R.id.publishing_year_spinner);
         ArrayAdapter<String> publishingYearAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.publishingYearsArray));
-        bookPublishingYear .setAdapter(publishingYearAdapter);
+        bookPublishingYear.setAdapter(publishingYearAdapter);
 
         bookLanguage  = (Spinner) findViewById(R.id.language_spinner);
         ArrayAdapter<String> languagesAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.languagesArray));
@@ -121,7 +121,7 @@ public class AddBook extends AppCompatActivity implements View.OnClickListener {
 
     private void uploadImage() {
         Intent i = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-        startActivityForResult(i, GET_FROM_GALLERY);
+         startActivityForResult(i, GET_FROM_GALLERY);
     }
     private void takePicture(){
         Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -156,14 +156,14 @@ public class AddBook extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void addBook(){
-        //set string
+        //set
         name = book_name.getText().toString();
         description = book_descriptor.getText().toString();
         burrowTime = book_borrowTime.getText().toString();
         available = "yes"; //when the book first added it is available
         category = bookCategory.getSelectedItem().toString();
         author = bookAuthor.getSelectedItem().toString();
-        publishing_year = bookPublishingYear .getSelectedItem().toString();
+        publishing_year = bookPublishingYear.getSelectedItem().toString();
         language = bookLanguage.getSelectedItem().toString();
         location = bookLocation.getSelectedItem().toString();
         securityDeposit = book_securityDeposit.getText().toString();

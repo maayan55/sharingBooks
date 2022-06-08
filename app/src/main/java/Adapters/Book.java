@@ -36,7 +36,7 @@ public class Book  implements Serializable {
     public String getCategory() {return this.category;}
     public void setCategory(String category) {this.category = category;}
     public String getAuthor() {return this.author;}
-    public void setAuthor1(String author) {this.author = author;}
+    public void setAuthor(String author) {this.author = author;}
     public String getLanguage() {return this.language;}
     public void setLanguage(String language) {this.language = language;}
     public String getPublishingYear() {return this.publishing_year;}
