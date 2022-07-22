@@ -1,11 +1,17 @@
 package Activities;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -36,6 +42,7 @@ import com.google.firebase.storage.StorageTask;
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 public class AddBook extends AppCompatActivity implements View.OnClickListener {
@@ -53,6 +60,7 @@ public class AddBook extends AppCompatActivity implements View.OnClickListener {
     private static final int GET_FROM_GALLERY = 3;
     private static final int GET_FROM_CAMERA = 0;
     byte[] byteData;
+    ActivityResultLauncher<Intent> activityResultLauncher;//--------------
 
 
     @Override
@@ -121,12 +129,14 @@ public class AddBook extends AppCompatActivity implements View.OnClickListener {
 
     private void uploadImage() {
         Intent i = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-         startActivityForResult(i, GET_FROM_GALLERY);
-    }
-    private void takePicture(){
-        Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(i, GET_FROM_GALLERY);
     }
+
+    private void takePicture(){
+       Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(i, GET_FROM_CAMERA);
+    }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -140,14 +150,14 @@ public class AddBook extends AppCompatActivity implements View.OnClickListener {
                 byteData = stream.toByteArray();
             }
             if(requestCode == GET_FROM_GALLERY){
-                Uri imguri = data.getData();
-                img.setImageURI(imguri);
+                Uri im = data.getData();
+                img.setImageURI(im);
                 Bitmap bitmap = null;
                 try {
-                    bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imguri);
-                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-                    byteData = baos.toByteArray();
+                    bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), im);
+                    ByteArrayOutputStream b = new ByteArrayOutputStream();
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, b);
+                    byteData = b.toByteArray();
                 }
                 catch (FileNotFoundException e) { e.printStackTrace();}
                 catch (IOException e) { e.printStackTrace();}
