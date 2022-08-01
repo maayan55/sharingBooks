@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -27,6 +28,7 @@ import Adapters.Book;
 
 public class SearchBook extends AppCompatActivity implements View.OnClickListener{
     private TextView clientName,title;
+    private EditText namebook;
     private Spinner category_spinner,author_spinner,publishing_year_spinner,language_spinner, location_spinner;
     private Button search_book_button;
     private FirebaseAuth firebaseAuth;
@@ -47,6 +49,8 @@ public class SearchBook extends AppCompatActivity implements View.OnClickListene
         //set firebase
         firebaseAuth=FirebaseAuth.getInstance();
         suppRef = FirebaseDatabase.getInstance().getReference("Suppliers");
+        //set name of the bbok
+        namebook = (EditText) findViewById(R.id.name_of_book);
         //set category_spinner
         category_spinner = (Spinner) findViewById(R.id.category_spinner);
         categoriesAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.categoriesArray));
@@ -74,6 +78,8 @@ public class SearchBook extends AppCompatActivity implements View.OnClickListene
         languagesAdapter.setDropDownViewResource(androidx.transition.R.layout.support_simple_spinner_dropdown_item);
         language_spinner.setAdapter(languagesAdapter);
 
+
+
         list_books=new ArrayList<>();
     }
 
@@ -85,7 +91,8 @@ public class SearchBook extends AppCompatActivity implements View.OnClickListene
     }
 
     private void searchBook() {
-        String category, location,author,publishing_year,language;
+        String category, location,author,publishing_year,language, name;
+        name = namebook.getText().toString();
         category = category_spinner.getSelectedItem().toString();
         location = location_spinner.getSelectedItem().toString();
         author= author_spinner.getSelectedItem().toString();
@@ -100,8 +107,13 @@ public class SearchBook extends AppCompatActivity implements View.OnClickListene
                 for (DataSnapshot sup : snapshot.getChildren()) {
                     for (DataSnapshot book : sup.child("Books").getChildren()) {
                         Book book1 = book.getValue(Book.class);
+                        System.out.println(book1.getName() instanceof String);
+                        System.out.println("name of the book" + name);
                         if (book1.getAvailable().equals("yes")) {
                             int counter = 0;
+                            if (book1.getName().equals(name) || name.equals("") ) {
+                                counter++;
+                            }
                             if (book1.getCategory().equals(category) || category.equals("choose book category")) {
                                 counter++;
                             }
@@ -117,7 +129,7 @@ public class SearchBook extends AppCompatActivity implements View.OnClickListene
                             if (book1.getLanguage().equals(language) || language.equals("choose book language")) {
                                 counter++;
                             }
-                            if (counter == 5) {
+                            if (counter == 6) {
                                 list_books.add(book1);
                             }
                         }
