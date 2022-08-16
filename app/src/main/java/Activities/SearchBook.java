@@ -28,8 +28,8 @@ import Adapters.Book;
 
 public class SearchBook extends AppCompatActivity implements View.OnClickListener{
     private TextView clientName,title;
-    private EditText namebook;
-    private Spinner category_spinner,author_spinner,publishing_year_spinner,language_spinner, location_spinner;
+    private EditText namebook, nameauthor;
+    private Spinner category_spinner,publishing_year_spinner,language_spinner, location_spinner;
     private Button search_book_button;
     private FirebaseAuth firebaseAuth;
     private ArrayAdapter<String> categoriesAdapter,locationsAdapter,authorsAdapter,publishingYearAdapter,languagesAdapter;
@@ -51,6 +51,7 @@ public class SearchBook extends AppCompatActivity implements View.OnClickListene
         suppRef = FirebaseDatabase.getInstance().getReference("Suppliers");
         //set name of the bbok
         namebook = (EditText) findViewById(R.id.name_of_book);
+        nameauthor = (EditText) findViewById(R.id.name_of_author);
         //set category_spinner
         category_spinner = (Spinner) findViewById(R.id.category_spinner);
         categoriesAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.categoriesArray));
@@ -62,10 +63,10 @@ public class SearchBook extends AppCompatActivity implements View.OnClickListene
         locationsAdapter.setDropDownViewResource(androidx.transition.R.layout.support_simple_spinner_dropdown_item);
         location_spinner.setAdapter(locationsAdapter);
         //set author_spinner
-        author_spinner = (Spinner) findViewById(R.id.author_spinner);
-        authorsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.authorsArray));
-        authorsAdapter.setDropDownViewResource(androidx.transition.R.layout.support_simple_spinner_dropdown_item);
-        author_spinner.setAdapter(authorsAdapter);
+//        author_spinner = (Spinner) findViewById(R.id.author_spinner);
+//        authorsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.authorsArray));
+//        authorsAdapter.setDropDownViewResource(androidx.transition.R.layout.support_simple_spinner_dropdown_item);
+//        author_spinner.setAdapter(authorsAdapter);
         //set publishing_year_spinner
         publishing_year_spinner = (Spinner) findViewById(R.id.publishing_year_spinner);
         publishingYearAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.publishingYearsArray));
@@ -93,9 +94,10 @@ public class SearchBook extends AppCompatActivity implements View.OnClickListene
     private void searchBook() {
         String category, location,author,publishing_year,language, name;
         name = namebook.getText().toString();
+        author = nameauthor.getText().toString();
         category = category_spinner.getSelectedItem().toString();
         location = location_spinner.getSelectedItem().toString();
-        author= author_spinner.getSelectedItem().toString();
+//        author= author_spinner.getSelectedItem().toString();
         publishing_year = publishing_year_spinner.getSelectedItem().toString();
         language= language_spinner.getSelectedItem().toString();
 
@@ -120,7 +122,7 @@ public class SearchBook extends AppCompatActivity implements View.OnClickListene
                             if (book1.getLocation().equals(location) || location.equals("choose book burrow location")) {
                                 counter++;
                             }
-                            if (book1.getAuthor().equals(author) || author.equals("choose book author")) {
+                            if (book1.getAuthor().equals(author) || author.equals("")) {
                                 counter++;
                             }
                             if (book1.getPublishingYear().equals(publishing_year) || publishing_year.equals("choose book publishing year")) {

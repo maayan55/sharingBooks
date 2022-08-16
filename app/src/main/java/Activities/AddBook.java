@@ -46,11 +46,11 @@ import java.io.InputStream;
 import java.util.ArrayList;
 
 public class AddBook extends AppCompatActivity implements View.OnClickListener {
-    private EditText book_name, book_descriptor, book_borrowTime,book_securityDeposit;
+    private EditText book_name, book_author, book_descriptor, book_borrowTime,book_securityDeposit;
     private ImageView img;
     private String name, description, burrowTime, available, category, author, publishing_year,language, location,securityDeposit,supplier_id;
     private Button add, upload, camera;
-    private Spinner bookCategory, bookAuthor, bookPublishingYear ,bookLanguage, bookLocation;
+    private Spinner bookCategory, bookPublishingYear ,bookLanguage, bookLocation;
     private FirebaseAuth firebaseAuth;
     private DatabaseReference supplier_ref,book_ref;
     private Supplier book_list_obj;
@@ -70,6 +70,7 @@ public class AddBook extends AppCompatActivity implements View.OnClickListener {
 
         //set edit text
         book_name = (EditText) findViewById(R.id.BookName);
+        book_author = (EditText) findViewById(R.id.BookAuthor);
         book_descriptor = (EditText) findViewById(R.id.BookDescription);
         book_borrowTime = (EditText) findViewById(R.id.BookDaysBurrow);
         book_securityDeposit = (EditText) findViewById(R.id.BookSecurityDeposit);
@@ -90,9 +91,9 @@ public class AddBook extends AppCompatActivity implements View.OnClickListener {
         ArrayAdapter<String> categoriesAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.categoriesArray));
         bookCategory.setAdapter(categoriesAdapter);
 
-        bookAuthor = (Spinner) findViewById(R.id.author_spinner);
-        ArrayAdapter<String> authorsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.authorsArray));
-        bookAuthor.setAdapter(authorsAdapter);
+//        bookAuthor = (Spinner) findViewById(R.id.author_spinner);
+//        ArrayAdapter<String> authorsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.authorsArray));
+//        bookAuthor.setAdapter(authorsAdapter);
 
         bookPublishingYear  = (Spinner) findViewById(R.id.publishing_year_spinner);
         ArrayAdapter<String> publishingYearAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.publishingYearsArray));
@@ -168,11 +169,11 @@ public class AddBook extends AppCompatActivity implements View.OnClickListener {
     private void addBook(){
         //set
         name = book_name.getText().toString();
+        author = book_author.getText().toString();
         description = book_descriptor.getText().toString();
         burrowTime = book_borrowTime.getText().toString();
         available = "yes"; //when the book first added it is available
         category = bookCategory.getSelectedItem().toString();
-        author = bookAuthor.getSelectedItem().toString();
         publishing_year = bookPublishingYear.getSelectedItem().toString();
         language = bookLanguage.getSelectedItem().toString();
         location = bookLocation.getSelectedItem().toString();
@@ -224,6 +225,9 @@ public class AddBook extends AppCompatActivity implements View.OnClickListener {
         if(name.isEmpty()){
             Toast.makeText(this,"please enter book name",Toast.LENGTH_SHORT).show();
         }
+        else if(author.isEmpty()){
+            Toast.makeText(this, "please enter book author", Toast.LENGTH_SHORT).show();
+        }
         else if(description.isEmpty()){
             Toast.makeText(this,"please enter book description",Toast.LENGTH_SHORT).show();
         }
@@ -232,9 +236,6 @@ public class AddBook extends AppCompatActivity implements View.OnClickListener {
         }
         else if(category.isEmpty()){
             Toast.makeText(this,"please enter book category",Toast.LENGTH_SHORT).show();
-        }
-        else if(author.isEmpty()){
-            Toast.makeText(this, "please enter book author", Toast.LENGTH_SHORT).show();
         }
         else if(publishing_year.isEmpty()){
             Toast.makeText(this, "please enter publishing year", Toast.LENGTH_SHORT).show();

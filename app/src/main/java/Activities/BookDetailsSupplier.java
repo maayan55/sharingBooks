@@ -45,7 +45,7 @@ import Adapters.OrderBook;
 import Adapters.Supplier;
 
 public class BookDetailsSupplier extends AppCompatActivity implements View.OnClickListener{
-    private TextView book_name, book_description,book_author,book_publishing_year,book_language,book_location, book_burrow_days, book_available;
+    private TextView book_name, book_category, book_description,book_author,book_publishing_year,book_language,book_location, book_burrow_days, book_available;
     String name;
     String available;
     String orderId;
@@ -66,6 +66,7 @@ public class BookDetailsSupplier extends AppCompatActivity implements View.OnCli
         book_name = (TextView) findViewById(R.id.book_name_text);
         book_available = (TextView) findViewById(R.id.available_book);
         book_description = (TextView) findViewById(R.id.description_book);
+        book_category = (TextView) findViewById(R.id.category_book);
         book_author = (TextView) findViewById(R.id.author_book);
         book_publishing_year= (TextView) findViewById(R.id.publishing_year_book);
         book_language = (TextView) findViewById(R.id.language_book);
@@ -88,6 +89,7 @@ public class BookDetailsSupplier extends AppCompatActivity implements View.OnCli
                 suppRef = FirebaseDatabase.getInstance().getReference("Suppliers").child(suppId).child("Books").child(new_book.getName());
                 book_name.setText(new_book.getName());
                 book_description.setText(new_book.getDescription());
+                book_category.setText(new_book.getCategory());
                 book_burrow_days.setText(new_book.getBurrowTime());
                 book_available.setText(new_book.getAvailable());
                 book_author.setText(new_book.getAuthor());
