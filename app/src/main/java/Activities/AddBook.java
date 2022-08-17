@@ -234,6 +234,9 @@ public class AddBook extends AppCompatActivity implements View.OnClickListener {
         else if(burrowTime.isEmpty()){
             Toast.makeText(this,"please enter book burrow time",Toast.LENGTH_SHORT).show();
         }
+        else if(securityDeposit.isEmpty()){
+            Toast.makeText(this,"please enter book security deposit",Toast.LENGTH_SHORT).show();
+        }
         else if(category.isEmpty()){
             Toast.makeText(this,"please enter book category",Toast.LENGTH_SHORT).show();
         }

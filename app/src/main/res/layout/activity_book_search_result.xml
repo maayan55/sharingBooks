@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
+    android:background="@drawable/b5"
     tools:context="Activities.BookSearchResult">
 
 
@@ -22,6 +23,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/architects_daughter"
             android:text="Search Results Books:"
+            android:textColor="@color/white"
             android:textSize="35sp" />
 
         <ListView

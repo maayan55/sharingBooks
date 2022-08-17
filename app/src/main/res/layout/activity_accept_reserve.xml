@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/b5"
     tools:context="Activities.acceptReserve">
 
 
@@ -11,28 +12,29 @@
         android:id="@+id/ok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/round_btn"
         android:text="ok"
-        android:textColor="@color/cardview_dark_background"
-        app:backgroundTint="?android:attr/textColorSecondaryInverse"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.556" />
+        app:layout_constraintVertical_bias="0.581" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="303dp"
         android:layout_height="141dp"
-        android:text="Your order has been accepted! Thank you!"
         android:fontFamily="@font/architects_daughter"
-        android:textSize="35sp"
         android:gravity="center"
+        android:text="Your order has been accepted! Thank you!"
+        android:textColor="@color/white"
+        android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.148"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.355" />
+        app:layout_constraintVertical_bias="0.15" />
 </androidx.constraintlayout.widget.ConstraintLayout>

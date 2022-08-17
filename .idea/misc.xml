@@ -28,12 +28,27 @@
         <entry key="..\:/Users/maaya/AndroidStudioProjects/sharingBooks/app/src/main/res/menu/menu_main.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/maaya/AndroidStudioProjects/sharingBooks/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1445" />
         <entry key="..\:/Users/maaya/AndroidStudioProjects/sharingBooks/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1445" />
-        <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/activity_add_book.xml" value="0.2859375" />
+        <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/drawable/round_btn.xml" value="0.2465" />
+        <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/drawable/round_btn2.xml" value="0.2455" />
+        <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/activity_accept_reserve.xml" value="0.240625" />
+        <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/activity_add_book.xml" value="0.25" />
         <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/activity_book_details_client.xml" value="0.3578125" />
-        <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/activity_book_details_supplier.xml" value="0.29438405797101447" />
+        <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/activity_book_details_supplier.xml" value="0.2" />
+        <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/activity_book_search_result.xml" value="0.33489583333333334" />
+        <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/activity_client_profile.xml" value="0.33489583333333334" />
+        <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/activity_client_register.xml" value="0.33489583333333334" />
+        <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/activity_login.xml" value="0.33489583333333334" />
+        <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/activity_main_client.xml" value="0.153125" />
+        <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/activity_main_supplier.xml" value="0.153125" />
         <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/activity_my_notification.xml" value="0.22552083333333334" />
-        <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/activity_search_book.xml" value="0.3578125" />
+        <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/activity_reserve_book_client.xml" value="0.153125" />
+        <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/activity_search_book.xml" value="0.22" />
+        <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/activity_supplier_books.xml" value="0.22" />
         <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/activity_supplier_info.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/activity_supplier_profile.xml" value="0.3302083333333333" />
+        <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/activity_supplier_register.xml" value="0.3302083333333333" />
+        <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/content_main.xml" value="0.3302083333333333" />
+        <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/notification.xml" value="0.3302083333333333" />
       </map>
     </option>
   </component>

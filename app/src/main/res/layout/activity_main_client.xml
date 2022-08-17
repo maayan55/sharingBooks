@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
+    android:background="@drawable/b5"
     tools:context="Activities.MainClient">
 
     <TextView
@@ -15,14 +16,14 @@
         android:fontFamily="@font/architects_daughter"
         android:gravity="center"
         android:text="Hey! what do you want to do?"
-        android:textColor="@color/cardview_dark_background"
+        android:textColor="@color/white"
         android:textSize="45sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.165" />
+        app:layout_constraintVertical_bias="0.171" />
 
     <Button
         android:id="@+id/supplierProfile"
@@ -31,14 +32,14 @@
         android:layout_marginTop="175dp"
         android:fontFamily="@font/architects_daughter"
         android:text="my profile"
-        android:textColor="@color/cardview_dark_background"
+        android:textColor="@color/white"
         android:textSize="20dp"
-        app:backgroundTint="?android:attr/textColorSecondaryInverse"
+        android:background="@drawable/round_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/hello"
-        app:layout_constraintVertical_bias="0.007" />
+        app:layout_constraintVertical_bias="0.286" />
 
     <Button
         android:id="@+id/bookList"
@@ -46,14 +47,14 @@
         android:layout_height="47dp"
         android:fontFamily="@font/architects_daughter"
         android:text="search book"
-        android:textColor="@color/cardview_dark_background"
+        android:textColor="@color/white"
         android:textSize="20dp"
-        app:backgroundTint="?android:attr/textColorSecondaryInverse"
+        android:background="@drawable/round_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.548" />
+        app:layout_constraintVertical_bias="0.77" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

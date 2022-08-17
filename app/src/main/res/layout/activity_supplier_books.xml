@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/b5"
     tools:context="Activities.SupplierBooks">
 
     <ScrollView
@@ -22,30 +23,30 @@
                 android:layout_height="64dp"
                 android:fontFamily="@font/architects_daughter"
                 android:text="My Books"
-                android:textColor="@color/cardview_dark_background"
-                android:textSize="55sp" />
+                android:textColor="@color/white"
+                android:textSize="50sp" />
 
             <Button
                 android:id="@+id/addBook"
-                android:layout_width="318dp"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
                 android:fontFamily="@font/architects_daughter"
                 android:text="+ Add New Book"
-                android:textColor="@color/cardview_dark_background"
+                android:textColor="@color/white"
                 android:textSize="24sp" />
 
             <LinearLayout
                 android:id="@+id/linearLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="307dp"
-                android:layout_marginTop="11dp"
+                android:layout_marginTop="18dp"
                 android:orientation="vertical">
 
                 <ListView
                     android:id="@+id/bookList"
-                    android:layout_width="422dp"
-                    android:layout_height="605dp"
+                    android:layout_width="400dp"
+                    android:layout_height="550dp"
                     android:paddingLeft="100px">
 
                 </ListView>

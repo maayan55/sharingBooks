@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/b5"
     tools:context=".ClientRegister">
 
     <TextView
@@ -13,7 +14,7 @@
         android:gravity="center"
         android:text="Register Client"
         android:fontFamily="@font/architects_daughter"
-        android:textColor="@color/cardview_dark_background"
+        android:textColor="@color/white"
         android:textSize="55sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,9 +29,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Full Name:"
-
-
-        android:textColor="@color/cardview_dark_background"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,7 +45,7 @@
         android:ems="10"
         android:gravity="center"
         android:inputType="textPersonName"
-        android:textColor="@color/cardview_dark_background"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,7 +62,7 @@
         android:gravity="center"
         android:text="Email:"
 
-        android:textColor="@color/cardview_dark_background"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,7 +78,7 @@
         android:ems="10"
         android:gravity="center"
         android:inputType="textEmailAddress"
-        android:textColor="@color/cardview_dark_background"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -95,7 +94,7 @@
         android:gravity="center"
         android:text="Password:"
 
-        android:textColor="@color/cardview_dark_background"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -111,7 +110,7 @@
         android:ems="10"
         android:gravity="center"
         android:inputType="textPassword"
-        android:textColor="@color/cardview_dark_background"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -127,7 +126,7 @@
         android:gravity="center"
         android:text="Phone Number:"
 
-        android:textColor="@color/cardview_dark_background"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -142,7 +141,7 @@
         android:ems="10"
         android:gravity="center"
         android:inputType="phone"
-        android:textColor="@color/cardview_dark_background"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -157,8 +156,8 @@
         android:layout_height="60dp"
 
         android:text="Sign Up"
-        android:textColor="@color/cardview_dark_background"
-        app:backgroundTint="?android:attr/textColorSecondaryInverse"
+        android:textColor="@color/white"
+        android:background="@drawable/round_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

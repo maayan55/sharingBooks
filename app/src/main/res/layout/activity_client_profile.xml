@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center"
+    android:background="@drawable/b5"
     tools:context="Activities.ClientProfile">
 
 
@@ -20,10 +21,10 @@
         android:layout_marginTop="19dp"
         android:layout_marginEnd="103dp"
         android:layout_marginBottom="470dp"
+        android:fontFamily="@font/architects_daughter"
         android:gravity="center"
         android:text="My profile"
-        android:fontFamily="@font/architects_daughter"
-        android:textColor="@color/cardview_dark_background"
+        android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,10 +42,10 @@
         android:layout_alignParentBottom="true"
         android:layout_marginTop="268dp"
         android:layout_marginBottom="386dp"
-        android:textColor="@color/cardview_dark_background"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
+        android:textColor="@color/white"
         tools:ignore="TextFields" />
 
     <EditText
@@ -55,10 +56,10 @@
         android:layout_alignParentBottom="true"
         android:layout_marginTop="375dp"
         android:layout_marginBottom="277dp"
-        android:textColor="@color/cardview_dark_background"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Phone"
+        android:textColor="@color/white"
         tools:ignore="TextFields" />
 
     <Button
@@ -72,9 +73,11 @@
         android:layout_marginStart="122dp"
         android:layout_marginEnd="150dp"
         android:layout_marginBottom="189dp"
-        android:background="#000"
+        android:background="@drawable/round_btn"
         android:gravity="center"
         android:text="Update details"
         android:textAllCaps="false"
-        android:textColor="#fff" />
+        android:textColor="#fff"
+
+        />
 </RelativeLayout>

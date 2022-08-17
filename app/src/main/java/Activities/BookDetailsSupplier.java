@@ -45,7 +45,7 @@ import Adapters.OrderBook;
 import Adapters.Supplier;
 
 public class BookDetailsSupplier extends AppCompatActivity implements View.OnClickListener{
-    private TextView book_name, book_category, book_description,book_author,book_publishing_year,book_language,book_location, book_burrow_days, book_available;
+    private TextView book_name, book_category, book_description,book_author,book_publishing_year,book_language,book_location, book_burrow_days, book_available, book_security_deposit;
     String name;
     String available;
     String orderId;
@@ -72,6 +72,7 @@ public class BookDetailsSupplier extends AppCompatActivity implements View.OnCli
         book_language = (TextView) findViewById(R.id.language_book);
         book_location= (TextView) findViewById(R.id.location_book);
         book_burrow_days = (TextView) findViewById(R.id.burrow_days_book);
+        book_security_deposit = (TextView) findViewById(R.id.Book_security_Deposit);
         //set img
         img = (ImageView) findViewById(R.id.book_image);
         //set button
@@ -96,6 +97,7 @@ public class BookDetailsSupplier extends AppCompatActivity implements View.OnCli
                 book_publishing_year.setText(new_book.getPublishingYear());
                 book_language.setText(new_book.getLanguage());
                 book_location.setText(new_book.getLocation());
+                book_security_deposit.setText(new_book.getSecurity_deposit());
                 getImg();
             }
 
