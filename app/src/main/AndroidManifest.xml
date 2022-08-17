@@ -1,71 +1,88 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.sharingbooks">
+<?xml version="1.0" encoding="utf-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+package="Activities">
 
-    <application
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
 
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.SharingBooks">
-        <activity
-            android:name="Activities.SupplierRegister"
-            android:exported="false" />
-        <activity
-            android:name="Activities.SupplierProfile"
-            android:exported="false" />
-        <activity
-            android:name="Activities.SupplierInfo"
-            android:exported="false" />
-        <activity
-            android:name="Activities.SupplierBooks"
-            android:exported="false" />
-        <activity
-            android:name="Activities.SearchBook"
-            android:exported="false" />
-        <activity
-            android:name="Activities.ReserveBookClient"
-            android:exported="false" />
-        <activity
-            android:name="Activities.MainSupplier"
-            android:exported="false" />
-        <activity
-            android:name="Activities.MainClient"
-            android:exported="false" />
-        <activity
-            android:name="Activities.ClientProfile"
-            android:exported="false" />
-        <activity
-            android:name="Activities.BookSearchResult"
-            android:exported="false" />
-        <activity
-            android:name="Activities.BookDetailsSupplier"
-            android:exported="false" />
-        <activity
-            android:name="Activities.BookDetailsClient"
-            android:exported="false" />
-        <activity
-            android:name="Activities.AddBook"
-            android:exported="false" />
-        <activity
-            android:name="Activities.acceptReserve"
-            android:exported="false" />
-        <activity
-            android:name="Activities.ClientRegister"
-            android:exported="false" />
-        <activity
-            android:name="Activities.loginActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+<application
+    android:name=".MyNotification"
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:requestLegacyExternalStorage="true"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:supportsRtl="true"
+    android:usesCleartextTraffic="true"
+    android:theme="@style/Theme.SharingBooks">
+    <activity
+        android:name=".SupplierRegister"
+        android:exported="false" />
+    <activity
+        android:name=".SupplierProfile"
+        android:exported="false" />
+    <activity
+        android:name=".SupplierInfo"
+        android:exported="false" />
+    <activity
+        android:name=".SupplierBooks"
+        android:exported="false" />
+    <activity
+        android:name=".SearchBook"
+        android:exported="false" />
+    <activity
+        android:name=".ReserveBookClient"
+        android:exported="false" />
+    <activity
+        android:name=".MainSupplier"
+        android:exported="false" />
+    <activity
+        android:name=".MainClient"
+        android:exported="false" />
+    <activity
+        android:name=".ClientProfile"
+        android:exported="false" />
+    <activity
+        android:name=".BookSearchResult"
+        android:exported="false" />
+    <activity
+        android:name=".BookDetailsSupplier"
+        android:exported="false" />
+    <activity
+        android:name=".BookDetailsClient"
+        android:exported="false" />
+    <activity
+        android:name=".AddBook"
+        android:exported="false" />
+    <activity
+        android:name=".acceptReserve"
+        android:exported="false" />
+    <activity
+        android:name=".ClientRegister"
+        android:exported="false" />
+    <activity
+        android:name=".loginActivity"
+        android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-    </application>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+
+    <service
+        android:name=".MyNotification"
+        android:exported="false">
+        <intent-filter>
+            <action android:name="com.google.firebase.MESSAGING_EVENT" />
+        </intent-filter>
+    </service>
+</application>
 
 </manifest>
+
+

@@ -11,18 +11,23 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.sharingbooks.R;
+import Activities.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.Notification;
 import Adapters.Supplier;
-
+import static Activities.MyNotification.CHANNEL_CUSTOMER_ORDER;
 
 public class MainSupplier extends AppCompatActivity  implements View.OnClickListener{
+    private DatabaseReference messageRef;
+    private String ID;
     private TextView displayName;
     private Button supp_profile, books_list;
     private FirebaseDatabase mFirebaseDatabase;
@@ -34,7 +39,10 @@ public class MainSupplier extends AppCompatActivity  implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_supplier);
         setViews();
+        ID = firebaseAuth.getUid();
+        checkMessage();
     }
+
     private void setViews(){
         //set button
         supp_profile =(Button) findViewById(R.id.supplierProfile);
@@ -93,5 +101,43 @@ public class MainSupplier extends AppCompatActivity  implements View.OnClickList
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void deleteMessages(String ID)
+    {
+        messageRef.child(ID).removeValue();
+    }
+
+    private void checkMessage()
+    {
+        messageRef = FirebaseDatabase.getInstance().getReference().child("messages");
+        messageRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.hasChild(ID)) {
+                    String Title = snapshot.child(ID).child("Title").getValue().toString();
+                    String Text = snapshot.child(ID).child("Text").getValue().toString();
+                    deleteMessages(ID);
+                    sendNotification(Title ,Text);
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    public void sendNotification(String Title , String Text){
+        NotificationManagerCompat NM = NotificationManagerCompat.from(this);
+        Notification notification = new NotificationCompat.Builder(MainSupplier.this, CHANNEL_CUSTOMER_ORDER)
+                .setSmallIcon(R.drawable.logo)
+                .setContentTitle(Title)
+                .setContentText(Text)
+                .build();
+        NM.notify(2,notification);
     }
 }

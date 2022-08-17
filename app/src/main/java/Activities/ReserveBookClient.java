@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.example.sharingbooks.R;
+import Activities.R;
 
 public class ReserveBookClient extends AppCompatActivity {
     @Override

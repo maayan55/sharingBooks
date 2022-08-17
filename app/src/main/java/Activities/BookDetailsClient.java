@@ -1,16 +1,23 @@
 package Activities;
 
 import android.annotation.SuppressLint;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-import com.example.sharingbooks.R;
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+
+import Activities.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -22,31 +29,11 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
-
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Date;
-import java.time.format.DateTimeFormatter;
-import java.time.LocalDateTime;
-
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import java.util.ArrayList;
 
-import Adapters.Client;
 import Adapters.Book;
+import Adapters.Client;
 import Adapters.OrderBook;
 import Adapters.Supplier;
 
@@ -58,8 +45,9 @@ public class BookDetailsClient extends AppCompatActivity implements View.OnClick
     private ImageView img;
     private DatabaseReference suppRef, mainRef,orderRef;
     private FirebaseAuth firebaseAuth;
-    private String suppId;
+    private String suppId,bookName;
     private Book book;
+    private DatabaseReference messageRef;
     private LocalDate current_date;
 
 
@@ -99,6 +87,7 @@ public class BookDetailsClient extends AppCompatActivity implements View.OnClick
         firebaseAuth= FirebaseAuth.getInstance();
         mainRef = FirebaseDatabase.getInstance().getReference();
         suppRef = FirebaseDatabase.getInstance().getReference("Suppliers").child(suppId).child("Books").child(book.getName());
+        messageRef = FirebaseDatabase.getInstance().getReference().child("messages");
 
         getBookDetails();
     }
@@ -190,6 +179,8 @@ public class BookDetailsClient extends AppCompatActivity implements View.OnClick
 
                             }
                         });
+                        messageRef.child(suppId).child("Title").setValue("New Order");
+                        messageRef.child(suppId).child("Text").setValue("New reservation for: " + book.getName() );
                     }
                 }
 

@@ -31,12 +31,13 @@
         <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/activity_add_book.xml" value="0.2859375" />
         <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/activity_book_details_client.xml" value="0.3578125" />
         <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/activity_book_details_supplier.xml" value="0.29438405797101447" />
+        <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/activity_my_notification.xml" value="0.22552083333333334" />
         <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/activity_search_book.xml" value="0.3578125" />
         <entry key="..\:/Users/shach/AndroidStudioProjects/sharingBooks/app/src/main/res/layout/activity_supplier_info.xml" value="0.22552083333333334" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17_PREVIEW" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
