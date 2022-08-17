@@ -24,8 +24,8 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="303dp"
-        android:layout_height="141dp"
+        android:layout_width="339dp"
+        android:layout_height="217dp"
         android:fontFamily="@font/architects_daughter"
         android:gravity="center"
         android:text="Your order has been accepted! Thank you!"

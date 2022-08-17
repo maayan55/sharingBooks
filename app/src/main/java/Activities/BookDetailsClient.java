@@ -106,6 +106,7 @@ public class BookDetailsClient extends AppCompatActivity implements View.OnClick
                     book_author.setText( book.getAuthor());
                     book_publishing_year.setText( book.getPublishingYear());
                     book_language.setText( book.getLanguage());
+                    book_category.setText(book.getCategory());
                     book_location.setText( book.getLocation());
                     book_securityDeposit.setText( book.getSecurity_deposit());
                     getImg();
