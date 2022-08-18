@@ -329,6 +329,7 @@
         android:background="@drawable/round_btn"
         android:text="return book"
         android:textColor="@color/white"
+        app:backgroundTint="@null"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

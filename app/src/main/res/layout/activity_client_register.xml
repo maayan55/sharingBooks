@@ -13,6 +13,7 @@
         android:layout_height="77dp"
         android:gravity="center"
         android:text="Register Client"
+        app:backgroundTint="@null"
         android:fontFamily="@font/architects_daughter"
         android:textColor="@color/white"
         android:textSize="55sp"
