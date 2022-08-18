@@ -92,7 +92,7 @@ public class MainSupplier extends AppCompatActivity  implements View.OnClickList
             startActivity(new Intent(this,loginActivity.class));
         }
         if(item.getItemId() == R.id.MyProfile){
-            Intent intent = new Intent(this, ClientProfile.class);
+            Intent intent = new Intent(this, SupplierProfile.class);
             startActivity(intent);
         }
         if(item.getItemId() == R.id.Home){
