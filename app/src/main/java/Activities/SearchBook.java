@@ -23,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 import Adapters.Book;
 
@@ -113,7 +114,7 @@ public class SearchBook extends AppCompatActivity implements View.OnClickListene
                         System.out.println("name of the book" + name);
                         if (book1.getAvailable().equals("yes")) {
                             int counter = 0;
-                            if (book1.getName().equals(name) || name.equals("") ) {
+                            if (book1.getName().toLowerCase().contains(name) || name.equals("") ) {
                                 counter++;
                             }
                             if (book1.getCategory().equals(category) || category.equals("choose book category")) {
@@ -122,7 +123,7 @@ public class SearchBook extends AppCompatActivity implements View.OnClickListene
                             if (book1.getLocation().equals(location) || location.equals("choose book burrow location")) {
                                 counter++;
                             }
-                            if (book1.getAuthor().equals(author) || author.equals("")) {
+                            if (book1.getAuthor().toLowerCase().contains(author) || author.equals("")) {
                                 counter++;
                             }
                             if (book1.getPublishingYear().equals(publishing_year) || publishing_year.equals("choose book publishing year")) {

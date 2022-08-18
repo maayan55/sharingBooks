@@ -11,15 +11,15 @@
 
     <TextView
         android:id="@+id/book_name_text"
-        android:layout_width="276dp"
-        android:layout_height="56dp"
+        android:layout_width="293dp"
+        android:layout_height="64dp"
         android:ems="10"
         android:fontFamily="@font/architects_daughter"
         android:inputType="textPersonName"
         android:paddingLeft="80px"
         android:text="Book name"
         android:textColor="@color/white"
-        android:textSize="45sp"
+        android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.014"
@@ -34,12 +34,11 @@
         android:layout_height="84dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.948"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         tools:srcCompat="@color/black" />
-
 
     <TextView
         android:id="@+id/description_text"
